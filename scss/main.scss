@@ -1,0 +1,10 @@
+@import "modules/_colors.scss";
+@import "modules/_mixins.scss";
+@import "partials/_base_options.scss";
+
+// main site
+@import "partials/home/_header.scss";
+@import "partials/home/_main_section.scss";
+@import "partials/home/_chose_an_apartment.scss";
+@import "partials/home/_flat_look.scss";
+@import "partials/home/_footer.scss";
