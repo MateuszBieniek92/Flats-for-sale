@@ -1,0 +1,50 @@
+.main-section {
+    background: url("../images/main__photo.png") no-repeat top;
+    height: 91.6vh;
+    background-size: cover;
+    position: relative;
+    .main__content {
+        .arrow {
+            border: none;
+        }
+        .arrow__content {
+            height: 35px;
+            width: 35px;
+            border-width: 4px 4px 0 0;
+            .arrow__circle {
+                border-radius: 50%;
+                width: 5px;
+                height: 5px;
+                background: white;
+                position: absolute;
+                top: 10px;
+                left: 16px;
+            }
+            &:hover {
+                cursor: pointer;
+                border-color: $btns__bg;
+                .arrow__circle {
+                    background: $btns__bg;
+                }
+            }
+        }
+        .arrow__left__position {
+            position: absolute;
+            bottom: 50px;
+            margin-left: 2rem;
+            left: 0;
+            @media(min-width: 768px) {
+                margin-left: 3rem;
+            }
+        }
+        .arrow__right__position {
+            position: absolute;
+            bottom: 50px;
+            margin-right: 2rem;
+            right: 0;
+            @media(min-width: 768px) {
+                margin-right: 4rem;
+            }
+        }
+    }
+}
