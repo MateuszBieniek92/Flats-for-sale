@@ -41,17 +41,17 @@
                 @media(min-width: 360px) {
                     width: 340px;
                 }
-                .layer {
-                    color: #fff;
-                    position: absolute;
-                    top: -60px;
-                    width: 100%;
-                    left: 0;
-                    padding: 26px 0;
-                    background-color: $btns__bg;
-                    @include transition(all 0.3s ease);
-                    z-index: -1;
-                }
+                // .layer {
+                //     color: #fff;
+                //     position: absolute;
+                //     top: -60px;
+                //     width: 100%;
+                //     left: 0;
+                //     padding: 26px 0;
+                //     background-color: $btns__bg;
+                //     @include transition(all 0.3s ease);
+                //     z-index: -1;
+                // }
                 &:hover {
                     @include transition(all 0.8s ease);
                     color: $white;
@@ -148,4 +148,16 @@
             background: $btns__bg;
         }
     }
+}
+
+.layer {
+    color: #fff;
+    position: absolute;
+    top: -60px;
+    width: 100%;
+    left: 0;
+    padding: 26px 0;
+    background-color: $btns__bg;
+    @include transition(all 0.3s ease);
+    z-index: -1;
 }

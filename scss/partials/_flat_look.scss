@@ -1,0 +1,142 @@
+.flat-look {
+    background: url("../images/appartment__plan__bg.png") no-repeat top;
+    background-size: cover;
+    overflow: auto;
+    .flat__buttons__position {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2rem 0 0 0;
+        @media(min-width: 768px) {
+            float: right;
+            padding: 6rem 0 0 0;
+        }
+        .flat__btn {
+            margin-top: 0.5rem;
+            border: none;
+            width: 160px;
+            height: 40px;
+            position: relative;
+            overflow: hidden;
+            color: $white;
+            background-color: $filter_btn;
+            margin: 0.5rem;
+            @media(min-width: 768px) {
+                width: 200px;
+            }
+            &:hover {
+                @include transition(all 0.8s ease);
+                color: $white;
+                cursor: pointer;
+                .layer {
+                    top: 0px;
+                }
+            }
+        }
+    }
+    .flat__view {
+        @media(min-width: 768px) {
+            float: left;
+            padding: 4.5rem 0 0 0;
+        }
+        img {
+            padding: 1.5rem;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .flat__description {
+        padding: 1rem;
+        @media(min-width: 768px) {
+            float: right;
+            margin: 4.8rem 0;
+        }
+        .flat__desc__content {
+            background: rgba(96, 55, 47, 0.7);
+            margin-bottom: 5rem;
+            padding-bottom: 0.5rem;
+            @media(min-width: 768px) {
+                margin-bottom: 0;
+                padding-bottom: 1rem;
+            }
+            .desc__header {
+                padding: 1rem 0;
+                @media(min-width: 768px) {
+                    padding: 2rem 0 1rem 0;
+                }
+                span {
+                    font-size: 15px;
+                    font-family: "Lato";
+                    color: $white;
+                    font-weight: 700;
+                    margin: 0.5rem;
+                    @media(min-width: 768px) {
+                        margin-left: 2rem;
+                    }
+                    p {
+                        font-size: 15px;
+                        font-family: "Lato";
+                        float: right;
+                    }
+                }
+                .measure {
+                    float: right;
+                    margin: 0 0.5rem;
+                    @media(min-width: 768px) {
+                        margin: 0 2rem;
+                    }
+                    p {
+                        display: inline-block;
+                        vertical-align: super;
+                        font-size: 10px;
+                    }
+                }
+            }
+            .location {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    font-size: 15px;
+                    font-family: "Lato";
+                    color: $white;
+                    margin-bottom: 1rem;
+                    .circle {
+                        border-radius: 50%;
+                        background: $btns__bg;
+                        height: 35px;
+                        width: 35px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 0.5rem;
+                        @media(min-width: 768px) {
+                            margin-left: 2rem;
+                        }
+                    }
+                    span {
+                        margin-left: 1rem;
+                        p {
+                            display: inline-block;
+                            vertical-align: super;
+                            font-size: 10px;
+                        }
+                    }
+                    .measure {
+                        margin-left: auto;
+                        order: 2;
+                        margin-right: 0.5rem;
+                        @media(min-width: 768px) {
+                            margin-right: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
