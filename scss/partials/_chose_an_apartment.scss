@@ -36,7 +36,7 @@
                 background-color: $filter_btn;
                 border: none;
                 position: relative;
-                overflow:hidden;
+                overflow: hidden;
                 z-index: 100;
                 @media(min-width: 360px) {
                     width: 340px;
@@ -58,6 +58,68 @@
                     cursor: pointer;
                     .layer {
                         top: 0px;
+                    }
+                }
+            }
+        }
+    }
+    .flats-table {
+        overflow: hidden;
+        width: 90%;
+        height: 750px;
+        position: relative;
+        display: inline-block;
+        @media(min-width: 768px) {
+            height: 700px;
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+        }
+        .table__btns {
+            display: inline-block;
+            @media(min-width: 768px) {
+                display: none;
+            }
+            .left__table__btn {
+                width: 50px;
+                height: 50px;
+                background: red;
+            }
+            .right__table__btn {
+                width: 50px;
+                height: 50px;
+                background: blue;
+            }
+        }
+        .table-content {
+            color: $option_text;
+            position: absolute;
+            transition: 0.5s;
+            thead {
+                tr {
+                    th {
+                        padding: 1rem;
+                        @media(min-width: 768px) {
+                            padding: 2rem;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        font-weight: 400;
+                        padding: 0.5rem;
+                        text-align: center;
+                        @media(min-width: 768px) {
+                            padding: 1rem;
+                        }
+                        sup {
+                            font-size: 10px;
+                        }
+                    }
+                    .status {
+                        color: $btns__bg;
                     }
                 }
             }
