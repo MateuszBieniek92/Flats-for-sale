@@ -13,6 +13,7 @@ footer {
             font-size: 24px;
             color: $white;
             display: block;
+            font-weight: 500;
             margin: -4.05rem 1rem 0 8rem;
             border-bottom: 2px solid $btns__bg;
             padding-bottom: 0.4rem;
@@ -64,8 +65,10 @@ footer {
             justify-content: center;
             align-items: center;
             margin: 4rem 0.5rem 0 0.5rem;
+            border: none;
             @media(min-width: 768px) {
-                margin: 7rem 0.5rem 0 0.5rem;
+                align-items: flex-end;
+                margin: 7rem 0.5rem 5rem 0.5rem;
             }
             input,
             textarea {
@@ -76,20 +79,46 @@ footer {
                     width: 70%;
                 }
             }
+            input::placeholder, textarea::placeholder {
+               padding-left: 1rem;
+               font-size: 16px;
+               font-weight: 400;
+            }
+            textarea::placeholder {
+                padding-top: 0.5rem;
+            }
             textarea {
                 height: 100px;
                 @media(min-width: 768px) {
                     height: 225px;
                 }
             }
-            .code {
-                background: white;
-                height: 35px;
+            .code__test {
                 display: flex;
-                align-items: center;
-                width: 120px;
-                justify-content: center;
-                margin-bottom: 1.5rem;
+                flex-direction: row;
+                width: 95%;
+                @media(min-width: 768px) {
+                    width: 70%;
+                }
+                .code {
+                    background: white;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    width: 47.5%;
+                    justify-content: center;
+                    margin: 0 1.2rem 1.5rem 0;
+                }
+                .form__code__validation {
+                    width: 47.5%;
+                    order: 2;
+                    margin-left: auto;
+                }
+            }
+            .form__submit__btn {
+                color: $white;
+                background: $filter_btn;
+                border: none;
             }
         }
     }
