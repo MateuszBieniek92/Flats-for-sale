@@ -1,0 +1,96 @@
+footer {
+    background: url("../images/footer__bg.png") no-repeat top;
+    background-size: cover;
+    overflow: auto;
+    .footer__header {
+        .letter {
+            width: 75px;
+            height: 55px;
+            display: inline-block;
+            margin: 3rem 1rem 1rem 1rem;
+        }
+        .header {
+            font-size: 24px;
+            color: $white;
+            display: block;
+            margin: -4.05rem 1rem 0 8rem;
+            border-bottom: 2px solid $btns__bg;
+            padding-bottom: 0.4rem;
+        }
+        .footer__logo {
+            .logo {
+                max-width: 100%;
+                height: auto;
+                margin: 3rem 0 2rem 1rem;
+            }
+            p {
+                color: $white;
+                font-size: 15px;
+                margin: 0 4rem 0 1rem;
+                margin-bottom: 2rem;
+                @media(min-width: 768px) {
+                    margin-bottom: 0;
+                }
+            }
+            .desktop__desc {
+                display: none;
+                @media(min-width: 768px) {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .footer__info {
+        color: $white;
+        margin: 0 5rem 0 1rem;
+        @media(min-width: 768px) {
+            margin: 15rem 0 0 0;
+        }
+        p {
+            padding-bottom: 0.2rem;
+            font-size: 15px;
+        }
+        .company__adress {
+            margin-bottom: 2rem;
+        }
+        .company__mail {
+            margin-bottom: 2rem;
+        }
+    }
+    .footer__form {
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 4rem 0.5rem 0 0.5rem;
+            @media(min-width: 768px) {
+                margin: 7rem 0.5rem 0 0.5rem;
+            }
+            input,
+            textarea {
+                width: 95%;
+                height: 35px;
+                margin-bottom: 1.5rem;
+                @media(min-width: 768px) {
+                    width: 70%;
+                }
+            }
+            textarea {
+                height: 100px;
+                @media(min-width: 768px) {
+                    height: 225px;
+                }
+            }
+            .code {
+                background: white;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                width: 120px;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
