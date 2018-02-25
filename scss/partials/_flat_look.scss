@@ -21,8 +21,13 @@
             color: $white;
             background-color: $filter_btn;
             margin: 0.5rem;
+            z-index: 100;
             @media(min-width: 768px) {
                 width: 200px;
+            }
+            .layer { 
+                top: -40px;
+                padding: 20px 0;
             }
             &:hover {
                 @include transition(all 0.8s ease);

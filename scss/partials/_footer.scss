@@ -43,12 +43,12 @@ footer {
     }
     .footer__info {
         color: $white;
-        margin: 0 5rem 0 1rem;
         @media(min-width: 768px) {
             margin: 15rem 0 0 0;
         }
         p {
             padding-bottom: 0.2rem;
+            margin-left: 1rem;
             font-size: 15px;
         }
         .company__adress {
@@ -64,7 +64,7 @@ footer {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 4rem 0.5rem 0 0.5rem;
+            margin: 4rem 0.5rem 1rem 0.5rem;
             border: none;
             @media(min-width: 768px) {
                 align-items: flex-end;
@@ -79,10 +79,11 @@ footer {
                     width: 70%;
                 }
             }
-            input::placeholder, textarea::placeholder {
-               padding-left: 1rem;
-               font-size: 16px;
-               font-weight: 400;
+            input::placeholder,
+            textarea::placeholder {
+                padding-left: 1rem;
+                font-size: 16px;
+                font-weight: 400;
             }
             textarea::placeholder {
                 padding-top: 0.5rem;
@@ -116,9 +117,62 @@ footer {
                 }
             }
             .form__submit__btn {
+                width: 95%;
+                height: 35px;
                 color: $white;
                 background: $filter_btn;
                 border: none;
+                position: relative;
+                overflow: hidden;
+                z-index: 100;
+                @media(min-width: 768px) {
+                    width: 70%;
+                }
+                .layer {
+                    top: -40px;
+                    padding: 20px 0;
+                }
+                &:hover {
+                    @include transition(all 0.8s ease);
+                    color: $white;
+                    cursor: pointer;
+                    .layer {
+                        top: 0px;
+                    }
+                }
+            }
+        }
+        .show__form {
+            height: 35px;
+            width: 91.5%;
+            background: $btns__bg;
+            display: flex;
+            border: none;
+            color: $white;
+            align-items: center;
+            margin: 1.5rem auto 5rem auto;
+            padding-left: 1rem;
+            @media(min-width: 540px) {
+               width: 93%;
+            }
+            @media(min-width: 768px) {
+                display: none;
+            }
+            .arrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                order: 2;
+                margin-left: auto;
+                height: 15px;
+                width: 30px;
+                padding-top: 1.1rem;
+                .arrow__content {
+                    top: 6px;
+                    height: 15px;
+                    width: 15px;
+                }
             }
         }
     }
