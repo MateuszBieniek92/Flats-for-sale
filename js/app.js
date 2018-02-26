@@ -6,14 +6,16 @@ $(function () {
     $hamburger = $('.menu__button');
     $menu = $('.menu');
 
-    function showMenu() {
+    if (mobile.matches) {
+        $menu.addClass('show-hide-menu');
+
         $hamburger.on('click', function () {
             $menu.slideToggle().toggleClass('is-active');
         });
+
+    } else {
+        $menu.removeClass('show-hide-menu');
     }
-
-
-
     //// table move btns
 
     var flatsTable = $('.flats-table');
@@ -31,6 +33,61 @@ $(function () {
             tableContent.css("left", "+=79.5");
         });
     }
+
+    //// flat__buttons
+
+    $groundLeftBtn = $('.left__ground');
+    $groundRightBtn = $('.right__ground');
+    $floorLeftBtn = $('.left__floor');
+    $floorRightBtn = $('.right__floor');
+
+    $flatImg = $('.flat__view').find('img');
+    $location = $('.location');
+    $descHeader = $('.desc__header');
+
+    $groundLeftBtn.click(function () {
+        $flatImg.attr('src', 'images/ground__left.png');
+        $descHeader.html('<span>powierzchnia użytkowa<span class="measure">34,39 m<p>2</p></span></span>');
+        $location.children().eq(3).html('<div class="circle">4</div><span>garderoba</span><span class="measure">5, 50 m<p>2</p></span>');
+        $location.children().eq(4).html('<div class="circle">5</div><span>korytarz</span><span class="measure">7, 51 m<p>2</p></span>');
+        $location.children().eq(5).html('');
+        $location.children().eq(6).html('');
+
+    });
+    $groundRightBtn.click(function () {
+        $flatImg.attr('src', 'images/ground__right.png');
+        $descHeader.html('<span>powierzchnia użytkowa<span class="measure">81,61 m<p>2</p></span></span>');
+        $location.children().eq(0).html('<div class="circle">1</div><span>garderoba</span><span class="measure">2, 88 m<p>2</p></span>');
+        $location.children().eq(1).html('<div class="circle">2</div><span>salon <br> z aneksem kuchennym</span><span class="measure">7, 51 m<p>2</p></span>');
+        $location.children().eq(2).html('<div class="circle">3</div><span>pokój</span><span class="measure">11, 79 m<p>2</p></span>');
+        $location.children().eq(3).html('<div class="circle">4</div><span>pokój</span><span class="measure">13, 31 m<p>2</p></span>');
+        $location.children().eq(4).html('<div class="circle">5</div><span>łazienka</span><span class="measure">4, 55 m<p>2</p></span>');
+        $location.children().eq(5).html('');
+        $location.children().eq(6).html('');
+    });
+    $floorLeftBtn.click(function () {
+        $flatImg.attr('src', 'images/floor__left.png');
+        $descHeader.html('<span>powierzchnia użytkowa<span class="measure">58,61 m<p>2</p></span></span>');
+        $location.children().eq(0).html('<div class="circle">1</div><span>pokój</span><span class="measure">15, 53 m<p>2</p></span>');
+        $location.children().eq(1).html('<div class="circle">2</div><span>łazienka</span><span class="measure">6, 33 m<p>2</p></span>');
+        $location.children().eq(2).html('<div class="circle">3</div><span>przedpokój</span><span class="measure">8, 05 m<p>2</p></span>');
+        $location.children().eq(3).html('<div class="circle">4</div><span>pokój</span><span class="measure">19, 53 m<p>2</p></span>');
+        $location.children().eq(4).html('<div class="circle">5</div><span>garderoba</span><span class="measure">4, 62 m<p>2</p></span>');
+        $location.children().eq(5).html('<div class="circle">5</div><span>hol</span><span class="measure">2, 50 m<p>2</p></span>');
+        $location.children().eq(6).html('<div class="circle">5</div><span>salon <br> z aneksem kuchennym</span><span class="measure">13, 79 m<p>2</p></span>');
+    });
+    $floorRightBtn.click(function () {
+        $flatImg.attr('src', 'images/floor__right.png');
+        $descHeader.html('<span>powierzchnia użytkowa<span class="measure">70, 32 m<p>2</p></span></span>');
+        $location.children().eq(0).html('<div class="circle">1</div><span>salon <br> z aneksem kuchennym</span><span class="measure">25, 50 m<p>2</p></span>');
+        $location.children().eq(1).html('<div class="circle">2</div><span>łazienka</span><span class="measure">6, 33 m<p>2</p></span>');
+        $location.children().eq(2).html('<div class="circle">3</div><span>pokój</span><span class="measure">12, 05 m<p>2</p></span>');
+        $location.children().eq(3).html('<div class="circle">4</div><span>pokój</span><span class="measure">9, 53 m<p>2</p></span>');
+        $location.children().eq(4).html('<div class="circle">5</div><span>garderoba</span><span class="measure">1, 62 m<p>2</p></span>');
+        $location.children().eq(5).html('<div class="circle">5</div><span>hol</span><span class="measure">5, 50 m<p>2</p></span>');
+        $location.children().eq(6).html('<div class="circle">5</div><span>przedpokój</span><span class="measure">3, 79 m<p>2</p></span>');
+    });
+
 
     //// form validation 
 
@@ -156,22 +213,20 @@ $(function () {
     $showFormBtn = $('.show__form');
     $arrowRotate = $showFormBtn.find('.arrow__down');
 
-    console.log($arrowRotate);
-    if (mobile.matches) {
-        $form.css('display', 'none');
-        $formSubmitBtn.css('display', 'none');
-        $showFormBtn.click(function (e) {
-            e.preventDefault();
-            $(this).text($(this).text() == 'MNIEJ' ? 'WIĘCEJ' : 'MNIEJ');
-            $(this).append('<div class="arrow"><div class="arrow__content arrow__down"></div></div>');
-            $form.slideToggle();
-            $formSubmitBtn.slideToggle();
-        });
-    }
-
+        if (mobile.matches) {
+            $form.css('display', 'none');
+            $formSubmitBtn.css('display', 'none');
+            $showFormBtn.click(function (e) {
+                e.preventDefault();
+                $(this).text($(this).text() == 'MNIEJ' ? 'WIĘCEJ' : 'MNIEJ');
+                $(this).append('<div class="arrow"><div class="arrow__content arrow__down"></div></div>');
+                $form.slideToggle();
+                $formSubmitBtn.slideToggle();
+            });
+        }
+    
     //// function start
 
-    showMenu();
     borderInput();
     moveTableBtns();
 });
