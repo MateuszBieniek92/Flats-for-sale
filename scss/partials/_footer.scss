@@ -178,6 +178,16 @@ footer {
             @media(min-width: 768px) {
                 display: none;
             }
+            &:hover {
+                cursor: pointer;
+                .arrow {
+                    .arrow__content {
+                        top: 6px;
+                        transform: rotateZ(315deg);
+                        @include transition(all 0.3s ease);
+                    }
+                }
+            }
             .arrow {
                 display: flex;
                 align-items: center;
@@ -189,7 +199,7 @@ footer {
                 width: 30px;
                 padding-top: 1.1rem;
                 .arrow__content {
-                    top: 6px;
+                    top: 0px;
                     height: 15px;
                     width: 15px;
                 }

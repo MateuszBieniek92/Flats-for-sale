@@ -139,6 +139,24 @@ $(function () {
 
     });
 
+    //// show__form__btn
+
+    $showFormBtn = $('.show__form');
+    $arrowRotate = $showFormBtn.find('.arrow__down');
+
+    console.log($arrowRotate);
+    if (mobile.matches) {
+        $form.css('display', 'none');
+        $formSubmitBtn.css('display', 'none');
+        $showFormBtn.click(function (e) {
+            e.preventDefault();
+            $(this).text($(this).text() == 'MNIEJ' ? "WIĘCEJ" : "MNIEJ");
+            $(this).append('<div class="arrow"><div class="arrow__content arrow__down"></div></div>');
+            $form.slideToggle();
+            $formSubmitBtn.slideToggle();
+        });
+    }
+
     //// function start
 
     borderInput();
