@@ -22,8 +22,27 @@ header {
             }
         }
     }
+    .is-active {
+        display: block;
+    }
+    .show-hide-menu {
+        position: absolute;
+        background-color: $btns__bg;
+        width: 100vw;
+        text-align: center;
+        flex-direction: column; 
+        top: 80px;
+        z-index: 999;
+        li {
+            display: block;
+            padding: 1em 0;
+            margin-right: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: $white;
+        }
+    }
     .menu__button {
-
         float: right;
         margin: 1rem;
         @media(min-width: 768px) {
@@ -33,7 +52,7 @@ header {
 }
 
 //  btns__bg__arrow
-.button{
+.button {
     width: 50px;
     height: 50px;
     background: $btns__bg;
@@ -46,8 +65,7 @@ header {
     position: relative;
     height: 50px;
     width: 50px;
-    margin: 0 20px 20px 0;
-    // border: 1px solid rgba(0, 0, 0, 0.25);
+    margin: 0 20px 20px 0; // border: 1px solid rgba(0, 0, 0, 0.25);
     .arrow__content {
         height: 25px;
         width: 25px;

@@ -1,6 +1,18 @@
 $(function () {
     var mobile = window.matchMedia("screen and (max-width: 768px)");
 
+    //// show hide menu
+
+    $hamburger = $('.menu__button');
+    $menu = $('.menu');
+
+    function showMenu() {
+        $hamburger.on('click', function () {
+            $menu.slideToggle().toggleClass('is-active');
+        });
+    }
+
+
 
     //// table move btns
 
@@ -150,7 +162,7 @@ $(function () {
         $formSubmitBtn.css('display', 'none');
         $showFormBtn.click(function (e) {
             e.preventDefault();
-            $(this).text($(this).text() == 'MNIEJ' ? "WIĘCEJ" : "MNIEJ");
+            $(this).text($(this).text() == 'MNIEJ' ? 'WIĘCEJ' : 'MNIEJ');
             $(this).append('<div class="arrow"><div class="arrow__content arrow__down"></div></div>');
             $form.slideToggle();
             $formSubmitBtn.slideToggle();
@@ -159,6 +171,7 @@ $(function () {
 
     //// function start
 
+    showMenu();
     borderInput();
     moveTableBtns();
 });
