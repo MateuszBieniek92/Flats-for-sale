@@ -16,7 +16,35 @@ $(function () {
     } else {
         $menu.removeClass('show-hide-menu');
     }
-    
+
+    //// scroll tops
+    var $menuOne = $menu.children().eq(0);
+    var $menuTwo = $menu.children().eq(1);
+    var $menuThree = $menu.children().eq(2);
+    var $menuFour = $menu.children().eq(3);
+
+    $menuOne.on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('.main-section').offset().top
+        }, 2000);
+    });
+
+    $menuTwo.on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('.chose-appartment').offset().top
+        }, 2000);
+    });
+    $menuThree.on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('.flat-look').offset().top
+        }, 2000);
+    });
+    $menuFour.on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('footer').offset().top
+        }, 2000);
+    });
+
     //// table move btns
 
     var flatsTable = $('.flats-table');
@@ -34,7 +62,7 @@ $(function () {
             tableContent.css("left", "+=79.5");
         });
     }
-    
+
     //// filter__buttons 
 
     var $checkBtn = $('.button');
