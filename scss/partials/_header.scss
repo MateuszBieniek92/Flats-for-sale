@@ -22,9 +22,6 @@ header {
             }
         }
     }
-    .is-active {
-        display: block;
-    }
     .show-hide-menu { 
         position: absolute;
         background-color: $btns__bg;
@@ -93,4 +90,7 @@ header {
             top: 6px;
         }
     }
+}
+.is-active {
+    display: block;
 }

@@ -3,8 +3,8 @@ $(function () {
 
     //// show hide menu
 
-    $hamburger = $('.menu__button');
-    $menu = $('.menu');
+    var $hamburger = $('.menu__button');
+    var $menu = $('.menu');
 
     if (mobile.matches) {
         $menu.addClass('show-hide-menu');
@@ -16,6 +16,7 @@ $(function () {
     } else {
         $menu.removeClass('show-hide-menu');
     }
+    
     //// table move btns
 
     var flatsTable = $('.flats-table');
@@ -32,6 +33,29 @@ $(function () {
         $leftTableBt.click(function () {
             tableContent.css("left", "+=79.5");
         });
+    }
+    
+    //// filter__buttons 
+
+    var $checkBtn = $('.button');
+
+    $checkBtn.click(function () {
+        $(this).next().slideToggle();
+
+        return false;
+    });
+
+    //// sort and filter__buttons
+
+    var flatNumberSortUp = $('.sort__up');
+    var flatNumberSortDown = $('.sort__down');
+
+    function sortItemsUp(a, b) {
+        return a.innerHTML > b.innerHTML ? 1 : -1;
+    }
+
+    function sortItemsDown(a, b) {
+        return a.innerHTML < b.innerHTML ? 1 : -1;
     }
 
     //// flat__buttons
@@ -213,18 +237,18 @@ $(function () {
     $showFormBtn = $('.show__form');
     $arrowRotate = $showFormBtn.find('.arrow__down');
 
-        if (mobile.matches) {
-            $form.css('display', 'none');
-            $formSubmitBtn.css('display', 'none');
-            $showFormBtn.click(function (e) {
-                e.preventDefault();
-                $(this).text($(this).text() == 'MNIEJ' ? 'WIĘCEJ' : 'MNIEJ');
-                $(this).append('<div class="arrow"><div class="arrow__content arrow__down"></div></div>');
-                $form.slideToggle();
-                $formSubmitBtn.slideToggle();
-            });
-        }
-    
+    if (mobile.matches) {
+        $form.css('display', 'none');
+        $formSubmitBtn.css('display', 'none');
+        $showFormBtn.click(function (e) {
+            e.preventDefault();
+            $(this).text($(this).text() == 'MNIEJ' ? 'WIĘCEJ' : 'MNIEJ');
+            $(this).append('<div class="arrow"><div class="arrow__content arrow__down"></div></div>');
+            $form.slideToggle();
+            $formSubmitBtn.slideToggle();
+        });
+    }
+
     //// function start
 
     borderInput();

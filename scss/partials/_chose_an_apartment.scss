@@ -14,11 +14,14 @@
             display: inline-flex;
             background: $option_bg;
             align-items: center;
+            position: relative;
+            width: auto;
             @media(min-width: 768px) {
                 margin:1.5rem 2rem 0 0;
             }
             p {
                 margin: 0 1rem 0 1rem;
+               font-size: 16px;
                 @media(min-width: 768px) {
                     margin: 0 4rem 0 1rem;
                 }
@@ -27,6 +30,27 @@
             .button {
                 &:hover {
                     cursor: pointer;
+                }
+            }
+            .filter__choose {
+                display: none;
+                position: absolute;
+                top: 50px;
+                margin-top: 0rem;
+                background: $option_bg;
+                width: 100%;
+                z-index: 999;
+                input {
+                    width: 30px;
+                    height: 30px;
+                    margin: 1rem;
+                }
+                label {
+                    color: $option_text;
+                    font-size: 16px;
+                    margin: 0 -0.5rem;
+                    position: relative;
+                    top: -10px;
                 }
             }
             .filter__button {
@@ -90,6 +114,28 @@
                         padding: 1rem;
                         @media(min-width: 768px) {
                             padding: 2rem;
+                        }
+                        .arrow {
+                            margin: auto;
+                            width: auto;
+                            .sort_up {
+                                margin-bottom: 2rem;
+                            }
+                            .arrow__content {
+                                border: 1px solid $btns__bg;
+                                border-width: 3px 3px 0 0;
+                                height: 15px;
+                                width: 15px;
+                                top: 0;
+                            }
+                            &:hover {
+                                cursor: pointer;
+                                color: $option_text;
+                                transform: none;
+                                .arrow__down {
+                                    transform: rotate(135deg);
+                                }
+                            }
                         }
                     }
                 }
