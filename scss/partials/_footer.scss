@@ -1,10 +1,8 @@
 footer {
     background: url("../images/footer__bg.png") no-repeat top;
     overflow: auto;
+    background-attachment: fixed;
     background-size: cover;
-    @media(min-width: 768px) {
-        background-size: initial;
-    }
     .footer__header {
         .letter {
             width: 75px;

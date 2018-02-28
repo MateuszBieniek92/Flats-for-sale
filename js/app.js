@@ -8,11 +8,9 @@ $(function () {
 
     if (mobile.matches) {
         $menu.addClass('show-hide-menu');
-
         $hamburger.on('click', function () {
             $menu.slideToggle().toggleClass('is-active');
         });
-
     } else {
         $menu.removeClass('show-hide-menu');
     }
@@ -72,17 +70,94 @@ $(function () {
             scrollTop: $('footer').offset().top
         }, 2000);
     });
-    
+
     //// slider main-section
 
+    var $rightSliderBtn = $('.main__content').find('.arrow__right');
+    var $leftSliderBtn = $('.main__content').find('.arrow__left');
+    var $photoSlider = $('.photo__slider');
+    var time = 500;
+    var $array = $photoSlider.find('li');
+    var $position = $array.index($('.visible'));
+    $array.first().addClass('visible');
+    $position = 0;
 
 
+    // auto slide
+    function slide(auto) {
+        if (auto === true) {
+            $position++;
+            if ($position === 3) {
+                $position = 0;
+            }
+        }
+        $array.eq($position).css('opacity', 0);
+        $('.visible').animate({
+            opacity: 0
+        }, 1000, function () {
+            $(this).removeClass('visible');
+            $array.eq($position).addClass('visible').animate({
+                opacity: 1
+            }, 100);
+        });
+    }
 
+    var ravenous = function () {
 
+        if (mobile.matches) {
+            var widthNext = $rightSliderBtn.outerWidth();
+            $rightSliderBtn
+                .on('click', function () {
+                    $position += 1;
+                    if ($position === 3) {
+                        $position = 0;
+                    }
+                    slide();
+                });
 
+            var widthPrev = $leftSliderBtn.outerWidth();
+            $leftSliderBtn
+                .on('click', function () {
+                    $position -= 1;
+                    if ($position === 3) {
+                        $position = 0;
+                    }
+                    slide();
+                });
+        } else {
+            var nextWidth = $rightSliderBtn.outerWidth();
+            $rightSliderBtn
+                .animate({
+                    right: -(nextWidth - 10) + 'px'
+                }, time * 3)
+                .on('click', function () {
+                    $position += 1;
+                    if ($position === 3) {
+                        $position = 0;
+                    }
+                    slide();
+                });
 
+            var prevWidth = $leftSliderBtn.outerWidth();
+            $leftSliderBtn
+                .animate({
+                    left: -(prevWidth - 10) + 'px'
+                }, time * 3)
+                .on('click', function () {
+                    $position -= 1;
+                    if ($position === 3) {
+                        $position = 0;
+                    }
+                    slide();
+                });
+        }
+    };
 
+    /// auto slider 
 
+    setInterval(function () {
+        slide(true);
+    }, 20000);
 
 
     //// table move btns
@@ -190,6 +265,7 @@ $(function () {
     var $formText = $form.eq(4);
     var $formCodeValidation = $('.form__code__validation');
     var $formSubmitBtn = $('.form__submit__btn');
+    var $mailPattern = /^[0-9a-zA-Z_.-]+@[0-9a-zA-Z.-]+\.[a-zA-Z]{2,3}$/;
 
     var $labelName = $form.eq(1);
     var $labelMail = $form.eq(3);
@@ -259,7 +335,7 @@ $(function () {
         }
 
         if ($nameVal.length > 5) {
-            if ($mailVal.indexOf("@") > -1) {
+            if ($mailPattern.test($mailVal)) {
                 if ($textVal.length > 10) {
                     if ($codeVal === 'AXK65GH') {
                         resetInput();
@@ -318,6 +394,10 @@ $(function () {
     }
 
     //// function start
+
+    //slider
+    $(window).resize(ravenous);
+    ravenous();
 
     borderInput();
     moveTableBtns();

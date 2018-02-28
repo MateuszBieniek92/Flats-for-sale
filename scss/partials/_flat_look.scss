@@ -1,7 +1,8 @@
 .flat-look {
     background: url("../images/appartment__plan__bg.png") no-repeat top;
     background-size: cover;
-    overflow: auto;
+    background-attachment: fixed;
+    overflow: hidden;
     .flat__buttons__position {
         display: flex;
         flex-wrap: wrap;

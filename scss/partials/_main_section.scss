@@ -1,6 +1,6 @@
 .main-section {
-    background: url("../images/main__photo.png") no-repeat top;
-    height: 91.6vh;
+    // background: url("../images/main__photo.png") no-repeat top;
+    height: 92vh;
     background-size: cover;
     position: relative;
     .main__content {
@@ -23,8 +23,10 @@
             &:hover {
                 cursor: pointer;
                 border-color: $btns__bg;
+                @include transition(all 0.8s ease);
                 .arrow__circle {
                     background: $btns__bg;
+                    @include transition(all 0.8s ease);
                 }
             }
         }
@@ -46,5 +48,41 @@
                 margin-right: 4rem;
             }
         }
+    }
+}
+
+.photo__slider {
+    list-style: none;
+    li {
+        display: none;
+        img {
+            max-width: 100%;
+            height: auto;
+            left: -1px;
+            top: -1px;
+            width: 100%;
+            height: 93vh;
+            background-size: cover;
+            position: relative;
+        }
+        .img__one {
+            background: url("../images/main__photo_slider__one.png") no-repeat top;
+            background-attachment: fixed;
+            background-size: cover;
+            position: relative;
+        }
+        .img__two {
+            background: url("../images/main__photo_slider__two.png") no-repeat top;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .img__three {
+            background: url("../images/main__photo_slider__three.png") no-repeat top;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    }
+    .visible {
+        display: block;
     }
 }

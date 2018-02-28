@@ -6,9 +6,11 @@
         justify-content: center;
         margin: 0;
         list-style-type: none;
+        @media(min-width: 768px) {
+            margin: 5rem 0;
+        }
         @media(min-width: 1298px) {
             flex-wrap: nowrap;
-            margin: 5rem 0;
         }
         li {
             margin: 1.5rem 0.4rem 0px 0.4rem;
