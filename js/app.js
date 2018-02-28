@@ -72,6 +72,18 @@ $(function () {
             scrollTop: $('footer').offset().top
         }, 2000);
     });
+    
+    //// slider main-section
+
+
+
+
+
+
+
+
+
+
 
     //// table move btns
 
