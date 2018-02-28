@@ -4,15 +4,15 @@ Do you want to buy an apartment? Check out this website!
 
 ## Used technologies: 
 
-* HTML - In progress... :)
-* CSS/SASS - In progress... :) 
-* RWD - In progress... :)
-* JavaScript - In progress... :)
-* jQuery - In progress... :)
+* HTML 
+* CSS/SASS
+* RWD
+* JavaScript 
+* jQuery 
 
 ## Demo:
 
-* In progress... :)
+https://mateuszbieniek92.github.io/Flats-for-sale/
 
 ## Demo image:
 
