@@ -94,3 +94,15 @@ header {
 .is-active {
     display: block;
 }
+.sticky {
+    position: fixed;
+    width: 100%;
+    background-color: $header__color;
+    top: 0;
+    height: 80px;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.35);
+    transition: 0.4s;
+    display: inline-block;
+}

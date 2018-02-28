@@ -17,6 +17,34 @@ $(function () {
         $menu.removeClass('show-hide-menu');
     }
 
+    //// sticky menu
+    var $sticky = $('.sticky__bar');
+    var top = $menu.offset().top;
+
+    $(function () {
+        $(window).on('scroll', function () {
+            var pix = $(document).scrollTop();
+            if (pix > top) {
+                $sticky.addClass('sticky');
+            } else {
+                $sticky.removeClass('sticky');
+            }
+        });
+    });
+
+    $(window).on('rezise', function () {
+        if ($sticky.hasClass('sticky')) {
+            pix = $menu.offset().top;
+        } else {
+            pix = $sticky.offset().top;
+        }
+        if (pix > top) {
+            $sticky.addClass('sticky');
+        } else {
+            $sticky.removeClass('sticky');
+        }
+    });
+
     //// scroll tops
     var $menuOne = $menu.children().eq(0);
     var $menuTwo = $menu.children().eq(1);
@@ -25,7 +53,7 @@ $(function () {
 
     $menuOne.on('click', function () {
         $('html, body').animate({
-            scrollTop: $('.main-section').offset().top
+            scrollTop: $('header').offset().top
         }, 2000);
     });
 
